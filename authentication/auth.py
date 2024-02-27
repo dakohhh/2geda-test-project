@@ -57,6 +57,8 @@ class Auth:
 
         user = UserRepository.get_user_by_email(email)
 
+        print(user.firstname, user.lastname)
+
         if user is None or not user.check_password(password):
             raise AuthenticationFailed("incorrect email or password")
 
